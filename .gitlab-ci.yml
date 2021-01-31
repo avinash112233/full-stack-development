@@ -1,0 +1,58 @@
+image: node:latest
+
+cache:
+   paths:
+       - node_modules/
+
+Test:
+    script:
+        - rm -rf .specs
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git add . && git commit -m "Merged .specs deleted"
+        - git subtree add --prefix .specs/ https://workspace.konfinity.com/swapnil/html-specs.git master
+        - npm install
+        - npm run test
+    only:
+        refs:
+            - master
+
+01index:
+  script:
+        - npm install
+        - npm run test
+  only:
+    refs:
+      - 1-html-tasks-introduction
+
+02brownBear:
+  script:
+        - npm install
+        - npm run test
+  only:
+    refs:
+      - 2-html-web-page-building
+        
+03table:
+  script:
+        - npm install
+        - npm run test
+  only:
+    refs:
+      - 3-html-table-building
+        
+04form:
+  script:
+        - npm install
+        - npm run test
+  only:
+    refs:
+      - 4-html-form-creation
+        
+05structure:
+  script:
+        - npm install
+        - npm run test
+  only:
+    refs:
+      - 5-html-structure

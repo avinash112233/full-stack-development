@@ -1,0 +1,46 @@
+<form action="/practice.html" method="POST">
+    <h1>Welcome to the Konfinity application!</h1>
+    <p>Let’s get started by creating your account</p>
+    <label for="username">Username</label>
+    <input id=username type="text" name="username" value="UserName" minlength="3" maxlength="15" pattern="[a-zA-Z0-9]+" required>
+    <label for="password">password</label>
+    <input id="password" type="password" name="user-pw" minlength="8" maxlength="15" required>
+    <!-- <label for="exp">years of experience:</label> -->
+    <input type="number" step="1" min="1" max="10" required>
+    <label for="job">For Job</label>
+    <input id="job" name="work-status" type="checkbox" value="job" required>
+    <label for="college">For College</label>
+    <input id="college" name="work-status" type="checkbox" value="college" required>
+    <label for="school">For School</label>
+    <input id="school" name="work-status" type="checkbox" value="school" required>
+    <section class="gender">
+        <label for="male">male</label>
+        <input id="male" type="radio" name="gender" value="male" required>
+        <label for="female">female</label>
+        <input id="female" type="radio" name="gender" value="female" required>
+    </section>
+    <section class="qualification">
+        <label for="qualification">qualification</label>
+        <select name="qualification" id="qualification">
+            <option value="Underqualified">Underqualified</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+        </select>
+    </section>
+    <section class="location-selection">
+        <label for="locations">location</label>
+        <input id="locations" type="text" list="location" name="locations" required>
+        <datalist id="location">
+            <option value="India">India</option>
+            <option value="Russia">Russia</option>
+            <option value="Africa">Africa</option>
+        </datalist>
+    </section>
+    <section class="extra-info">
+        <label for="extra">extra</label>
+        <textarea name="extra" id="extra" cols="40" rows="3"></textarea>
+    </section>
+    <section class="submission">
+        <input type="submit" value="Submit" required>
+    </section>
+</form>
